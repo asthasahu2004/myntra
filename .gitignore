@@ -25,3 +25,7 @@ yarn-error.log*
 
 # Database files
 /data/db/
+
+# Large CSV files
+myntra202305041052.csv
+myntra_500_items.csv
