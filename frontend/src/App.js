@@ -16,7 +16,10 @@ import MPpage from "./components/Productpage/MPpage";
 import Footer from "./components/Footer/Footer";
 import Coupon from "./components/Coupon/Coupon";
 import Wishlist from "./components/Wishlist/Wishlist";
+<<<<<<< HEAD
 import AIContrastWishlist from "./components/Wishlist/AIContrastWishlist";
+=======
+>>>>>>> 1125742fcac5b8ab3eae10245f19d275a7042fbc
 import Bag from './components/Bag/Bag'
 import Address from "./components/Bag/Address";
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -78,7 +81,10 @@ function App() {
        {window.screen.width > 1024 && <Route path='/products/:id' element={ <Ppage/>}/>}
       {window.screen.width < 1024 && <Route path='/products/:id' element={<MPpage/>}/>}
       <Route path='/my_wishlist' element={<Wishlist user={isAuthentication}/>}/>
+<<<<<<< HEAD
       <Route path='/ai_wishlist' element={<AIContrastWishlist user={isAuthentication}/>}/>
+=======
+>>>>>>> 1125742fcac5b8ab3eae10245f19d275a7042fbc
       <Route path='/bag' element={<Bag user={user}/>}/>
       <Route path='/address/bag' element={<Address user={user}/>}/>
       </Routes>

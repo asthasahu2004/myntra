@@ -131,10 +131,13 @@ const Navbar = ({user}) => {
               </li>
               <li className='w-max flex justify-center items-center font1 font-semibold capitalize no-underline text-sm border-4 border-transparent ' >
 
+<<<<<<< HEAD
                 <Link to='/ai_wishlist'><h1 className='px-3 text-xs text-center relative'> <span className='text-lg absolute -top-5 left-1/3'>🤖</span>AI Compare</h1></Link>
               </li>
               <li className='w-max flex justify-center items-center font1 font-semibold capitalize no-underline text-sm border-4 border-transparent ' >
 
+=======
+>>>>>>> 1125742fcac5b8ab3eae10245f19d275a7042fbc
                <Link to='/bag'> <h1 className='px-3 text-xs text-center relative'><span className='text-lg absolute -top-5 left-1/3'><BsHandbag /></span>Bag</h1></Link>
               </li>
             </ul>

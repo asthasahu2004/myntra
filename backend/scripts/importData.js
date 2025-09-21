@@ -98,7 +98,11 @@ const importData = async () => {
         const products = [];
         
         // Read CSV file
+<<<<<<< HEAD
         fs.createReadStream('myntra_sample_500.csv')
+=======
+        fs.createReadStream('./myntra_500_items.csv')
+>>>>>>> 1125742fcac5b8ab3eae10245f19d275a7042fbc
             .pipe(csv())
             .on('data', (row) => {
                 try {
