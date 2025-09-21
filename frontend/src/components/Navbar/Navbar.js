@@ -11,6 +11,7 @@ import Kids from './Submenu/Kids'
 import Home from './Submenu/Home'
 import Beauty from './Submenu/Beauty'
 import Studio from './Submenu/Studio'
+import Friends from './Submenu/Friends'
 import Profile from './Submenu/Profile'
 import { Link } from 'react-router-dom'
 
@@ -23,6 +24,7 @@ const Navbar = ({ user }) => {
     home: { visible: 'hidden', show: false },
     beauty: { visible: 'hidden', show: false },
     studio: { visible: 'hidden', show: false },
+    friends: { visible: 'hidden', show: false },
     profile: { visible: 'hidden', show: false }
   })
 
@@ -57,6 +59,10 @@ const Navbar = ({ user }) => {
 
   const studioCallback = useCallback((visible, show) => {
     handleMenuToggle('studio', visible, show)
+  }, [handleMenuToggle])
+
+  const friendsCallback = useCallback((visible, show) => {
+    handleMenuToggle('friends', visible, show)
   }, [handleMenuToggle])
 
   const profileCallback = useCallback((visible, show) => {
@@ -126,6 +132,17 @@ const Navbar = ({ user }) => {
               <h1 className='px-3 relative'>
                 STUDIO
                 <span className='text-[#fb56c1] text-[10px] absolute -top-1/2'>new</span>
+              </h1>
+            </li>
+            
+            <li 
+              className='w-max flex justify-center items-center border-4 border-transparent cborder7'
+              onMouseEnter={() => handleMenuToggle('friends', 'block', true)} 
+              onMouseLeave={() => handleMenuToggle('friends', 'hidden', false)}
+            >
+              <h1 className='px-3 relative'>
+                FRIENDS
+                <span className='text-[#ff6b35] text-[10px] absolute -top-1/2'>beta</span>
               </h1>
             </li>
           </ul>
@@ -214,6 +231,11 @@ const Navbar = ({ user }) => {
           show={menuStates.studio.show} 
           CMenu={menuStates.studio.visible} 
           parentCallback={studioCallback} 
+        />
+        <Friends 
+          show={menuStates.friends.show} 
+          CMenu={menuStates.friends.visible} 
+          parentCallback={friendsCallback} 
         />
         <Profile 
           user={user}

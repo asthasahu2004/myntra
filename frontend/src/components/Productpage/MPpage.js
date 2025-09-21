@@ -15,6 +15,7 @@ import { BsHandbag } from 'react-icons/bs'
 import Single_product from '../Product/Single_product'
 import {createbag, createwishlist} from '../../action/orderaction'
 import {useAlert} from 'react-alert'
+import Reviews from '../Reviews/Reviews'
 import Footer from '../Footer/Footer'
 
 const MPpage = () => {
@@ -28,7 +29,7 @@ const MPpage = () => {
         document.documentElement.scrollTop = 0;
     }, [dispatch, param]);
 
-    const indicatorStyles: CSSProperties = {
+    const indicatorStyles = {
         background: '#CFCECD',
         width: 7,
         height: 7,
@@ -112,8 +113,8 @@ const MPpage = () => {
                     <div>
                         <Carousel showThumbs={false} showStatus={false} showArrows={false} showIndicators={true} renderIndicator={(onClickHandler, isSelected, index, label) => indicator(onClickHandler, isSelected, index, label)}>
                             {
-                                product.images.map((im) => (
-                                    <div className=''>
+                                product.images.map((im, index) => (
+                                    <div key={index} className=''>
                                         <img src={im.url} alt='product' />
                                         <div className='h-[30px] bg-white'>
 
@@ -141,8 +142,8 @@ const MPpage = () => {
                                 </div>
                                 <div className='mt-2 pb-6 pt-4 bg-white px-4'>
                                     {
-                                        product && product.bulletPoints.map((e) =>
-                                            <div className=' font1 font-extralight text-slate-500'>
+                                        product && product.bulletPoints.map((e, index) =>
+                                            <div key={index} className=' font1 font-extralight text-slate-500'>
                                                 {e.point}
                                             </div>
                                         )
@@ -196,6 +197,10 @@ const MPpage = () => {
                                     <ul className='grid grid-cols-2 gap-2'>
                                     {similar && similar.map((pro) => (<Single_product pro={pro} key={pro._id} />))}
                                     </ul>
+                                </div>
+                                
+                                <div className='mt-2 bg-white'>
+                                    <Reviews productId={param.id} />
                                 </div>
                             </div>
 

@@ -1,0 +1,129 @@
+.reviews-section {
+  font-family: 'Whitney', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.reviews-section h2 {
+  color: #282c3f;
+}
+
+.reviews-section .review-card {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.reviews-section .review-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section .star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.reviews-section .review-summary {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.reviews-section .generate-btn {
+  background: linear-gradient(135deg, #ff3f6c 0%, #f64871 100%);
+  transition: all 0.3s ease;
+}
+
+.reviews-section .generate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 63, 108, 0.3);
+}
+
+.reviews-section .pagination-btn {
+  transition: all 0.2s ease;
+}
+
+.reviews-section .pagination-btn:hover {
+  transform: translateY(-1px);
+}
+
+.reviews-section .sort-select {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.reviews-section .sort-select:focus {
+  border-color: #ff3f6c;
+  box-shadow: 0 0 0 3px rgba(255, 63, 108, 0.1);
+}
+
+.reviews-section .loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ff3f6c;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.reviews-section .sentiment-positive {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.reviews-section .sentiment-negative {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.reviews-section .sentiment-neutral {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.reviews-section .review-actions button {
+  transition: color 0.2s ease;
+}
+
+.reviews-section .review-actions button:hover {
+  color: #ff3f6c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 16px;
+  }
+  
+  .reviews-section .review-summary {
+    padding: 16px;
+  }
+  
+  .reviews-section .review-card {
+    padding: 16px;
+  }
+  
+  .reviews-section h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .reviews-section .flex.justify-between {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .reviews-section .generate-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

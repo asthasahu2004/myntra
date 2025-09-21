@@ -31,7 +31,7 @@ const Beauty = ({show, CMenu, parentCallback}) => {
             <div className=" h-[418px]">
               <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Makeup</h1>
               {Makeup.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5 font-thin hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5 font-thin hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
              
             </div>
@@ -39,7 +39,7 @@ const Beauty = ({show, CMenu, parentCallback}) => {
             <div className=" h-[418px] ">
               <h1 className='text-[#0db7af] text-sm  font-semibold py-1'>Skincare,&nbsp;Bath&nbsp;&&nbsp;Body</h1>
               {SkincareBathBody.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5  hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5  hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
 
               <hr className='py-1' />
@@ -54,29 +54,29 @@ const Beauty = ({show, CMenu, parentCallback}) => {
             <div className=" h-[418px] ">
               <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Haircare</h1>
               {Haircare.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
               <hr className='py-1' />
               <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Fragrances</h1>
               {Fragrances.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
             </div>
 
             <div className=" h-[418px] ">
             <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Hair&nbsp;Straightener</h1>
               {HairStraightener.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
               <hr className='py-1' />
               <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Men's&nbsp;Grooming</h1>
               {MenGrooming.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
               <hr className='py-1' />
               <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Beauty&nbsp;Gift&nbsp;&&nbsp;Makeup&nbsp;Set</h1>
               {BeautyGiftMakeupSet.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
               <hr className='py-1' />
               <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Premium&nbsp;Beauty</h1>
@@ -87,7 +87,7 @@ const Beauty = ({show, CMenu, parentCallback}) => {
             <div className=" h-[418px] ">
             <h1 className='text-[#0db7af] text-sm font-semibold py-1'>Top&nbsp;Brands</h1>
               {BTopBrands.map((data) =>
-                <Link to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
+                <Link key={data.title} to='/products'><li className='litext list-none py-0.5 hover:font-semibold'onClick={()=> parentCallback('hidden', false)}>{data.title}</li></Link>
               )}
               
             </div>

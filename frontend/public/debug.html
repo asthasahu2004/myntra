@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug LocalStorage</title>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        .section { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+        pre { background: #f5f5f5; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>LocalStorage Debug</h1>
+    
+    <div class="section">
+        <h2>Selected Friends Contacts</h2>
+        <pre id="contacts"></pre>
+    </div>
+    
+    <div class="section">
+        <h2>Feed Generated At</h2>
+        <pre id="feedTime"></pre>
+    </div>
+    
+    <script>
+        // Display localStorage data
+        const contactsData = localStorage.getItem('selectedFriendsContacts');
+        const feedTime = localStorage.getItem('feedGeneratedAt');
+        
+        document.getElementById('contacts').textContent = contactsData || 'No data found';
+        document.getElementById('feedTime').textContent = feedTime || 'No data found';
+        
+        // Parse and analyze the contacts data
+        if (contactsData) {
+            try {
+                const parsed = JSON.parse(contactsData);
+                console.log('Parsed contacts data:', parsed);
+                
+                if (parsed.length > 0) {
+                    const firstContact = parsed[0];
+                    console.log('First contact:', firstContact);
+                    
+                    if (firstContact.productDatasets) {
+                        console.log('First contact productDatasets:', firstContact.productDatasets);
+                        
+                        if (firstContact.productDatasets.wishlist && firstContact.productDatasets.wishlist.length > 0) {
+                            console.log('First wishlist item:', firstContact.productDatasets.wishlist[0]);
+                            console.log('First wishlist productId:', firstContact.productDatasets.wishlist[0].productId);
+                            console.log('ProductId type:', typeof firstContact.productDatasets.wishlist[0].productId);
+                        }
+                    }
+                }
+            } catch (e) {
+                console.error('Error parsing contacts data:', e);
+            }
+        }
+    </script>
+</body>
+</html>

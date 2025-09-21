@@ -14,6 +14,7 @@ import {VscChromeClose} from 'react-icons/vsc'
 import {useAlert} from 'react-alert'
 import {getuser} from '../../action/useraction'
 import {createbag, createwishlist, clearErrors} from '../../action/orderaction'
+import Reviews from '../Reviews/Reviews'
 import Footer from '../Footer/Footer'
 
 const Ppage = () => {
@@ -120,8 +121,8 @@ const Ppage = () => {
               <div className='h-max col-span-7'>
                 <div className='grid grid-cols-2 gap-2 '>
                   {
-                    product.images.map((e) =>
-                      <div className='w-full overflow-hidden' onClick={()=>(Addclass(),setimg(e.url))}>
+                    product.images.map((e, index) =>
+                      <div key={index} className='w-full overflow-hidden' onClick={()=>(Addclass(),setimg(e.url))}>
                         <img src={e.url} className='w-full border-[0.5px] border-slate-100 hover:-translate-y-1 hover:scale-110 duration-300 cursor-zoom-in ' alt="productImage" />
                       </div>
 
@@ -159,8 +160,8 @@ const Ppage = () => {
                 <div className='border-b-[1px] border-slate-200  pb-6 pt-4'>
 
                   {
-                    product && product.bulletPoints.map((e) =>
-                      <div className='mb-2 font-extralight text-slate-600'>
+                    product && product.bulletPoints.map((e, index) =>
+                      <div key={index} className='mb-2 font-extralight text-slate-600'>
                         {e.point}
                       </div>
                     )
@@ -195,8 +196,8 @@ const Ppage = () => {
                   </div>
                   <h1 className='font1 flex items-center mt-4 font-semibold'>Specifications</h1>
                   {
-                    product.specification.map((e) =>
-                      <li className='list-none mt-2'>{e.point}</li>
+                    product.specification.map((e, index) =>
+                      <li key={index} className='list-none mt-2'>{e.point}</li>
                     )
                   }
                 </div>
@@ -204,6 +205,11 @@ const Ppage = () => {
                 <div className='border-b-[1px] border-slate-200 pb-6 pt-4 '>
                   <li className='list-none mt-2'>Product Code:&nbsp;{product.style_no.toUpperCase()}</li>
                   <li className='list-none mt-2'>Seller:&nbsp;<span className='text-[#ff3f6c] font-bold'>{product.brand.toUpperCase()}</span></li>
+                </div>
+
+                {/* Reviews Component positioned after specifications */}
+                <div className='mt-6'>
+                  <Reviews productId={param.id} />
                 </div>
 
               </div>

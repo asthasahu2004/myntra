@@ -61,9 +61,40 @@ const usermodel = new mongoose.Schema({
    },
    TOA:{
        type:String
+   },
+   // Friends-related fields
+   selectedContacts: [{
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'Contact'
+   }],
+   friendsFeeds: [{
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'FriendsFeed'
+   }],
+   dataUploads: [{
+       type: mongoose.Schema.Types.ObjectId,
+       ref: 'DataUpload'
+   }],
+   friendsPreferences: {
+       defaultContactCount: {
+           type: Number,
+           default: 10,
+           min: 10
+       },
+       autoRefreshFeed: {
+           type: Boolean,
+           default: false
+       },
+       feedSortBy: {
+           type: String,
+           enum: ['relevance', 'price', 'brand', 'category', 'date'],
+           default: 'relevance'
+       }
    }
     
 
+}, {
+    timestamps: true
 })
 
 usermodel.methods.getJWTToken = function () {

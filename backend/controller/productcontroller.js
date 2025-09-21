@@ -61,4 +61,19 @@ exports.SendSingleProduct = A(async (req, res, next)=>{
     })
 })
 
+exports.getBatchProducts = A(async (req, res, next)=>{
+    const { ids } = req.body;
+    
+    if (!ids || !Array.isArray(ids) || ids.length === 0) {
+        return next(new Errorhandler("Product IDs array is required", 400));
+    }
+    
+    const products = await Product.find({ _id: { $in: ids } });
+    
+    res.status(200).json({
+        success: true,
+        products
+    })
+})
+
  

@@ -89,9 +89,9 @@ const Single_product = ({ pro }) => {
                             <div className="slideshow-container min-h-[200px]">
 
                                 {
-                                    pro.images.map((im) => (
+                                    pro.images.map((im, index) => (
 
-                                        <div className={`${pro.style_no} fade relative `} >
+                                        <div key={index} className={`${pro.style_no} fade relative `} >
                                             <LazyLoadImage src={im.url}  className="w-full" width='100%'  alt='product' effect='blur' />
                                             {/* <div className='absolute bottom-2 left-2 bg-white rounded-full px-2 text-[10px] font1 flex py-[2px] items-center'>
                                                 3.6&nbsp;<AiFillStar className='text-[#0db7af]' />&nbsp;|&nbsp;2k</div> */}
@@ -112,7 +112,7 @@ const Single_product = ({ pro }) => {
                             <div className={`${pro.style_no}hover hidden absolute pb-6 bottom-0 w-full bg-[#ffffff]  mx-auto `}>
                                 <div className='text-center mb-2'>
                                     {pro.images.map((img, i) => (
-                                        <span className={`${pro.style_no}1 dot `} onClick={() => (currentSlide(i + 1))} ></span>
+                                        <span key={i} className={`${pro.style_no}1 dot `} onClick={() => (currentSlide(i + 1))} ></span>
 
                                     ))}
                                 </div>

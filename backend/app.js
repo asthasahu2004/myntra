@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser')
 const User = require('./routes/userroutes.js')
 const Product = require('./routes/productroute')
 const Order = require('./routes/orderroutes')
+const Friends = require('./routes/friendsroutes')
+const Reviews = require('./routes/reviewroutes')
 const errorMiddleware = require('./Middelwares/error');
 const path = require("path");
 if (process.env.NODE_ENV !== "PRODUCTION") {
@@ -18,6 +20,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use('/api/v1', User)
 app.use('/api/v1', Product)
 app.use('/api/v1', Order)
+app.use('/api/v1/friends', Friends)
+app.use('/api/v1/reviews', Reviews)
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 

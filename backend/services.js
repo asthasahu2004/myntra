@@ -8,8 +8,10 @@ process.on('uncaughtException', (err)=>{
     process.exit(1)
 })
 
-const server = app.listen(process.env.PORT, ()=>{
-    console.log(`Server on http://localhost:${process.env.PORT}`)
+const PORT = process.env.PORT || 4000
+
+const server = app.listen(PORT, ()=>{
+    console.log(`Server on http://localhost:${PORT}`)
 })
 
 connectdatabse()
