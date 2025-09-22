@@ -301,16 +301,23 @@ const AIContrastWishlist = () => {
                 {/* Products Grid */}
                 {!showComparison ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
-                        {wishlist.orderItems?.map((item) => (
-                            <ProductComparisonCard
-                                key={item._id}
-                                product={item.product}
-                                isSelected={selectedProducts.some(p => p._id === item.product._id)}
-                                onSelect={handleProductSelect}
-                                onDelete={() => delwish(user?._id, item.product._id)}
-                                onMoveToBag={() => movetobag(user?._id, item.product._id)}
-                            />
-                        ))}
+                        {wishlist.orderItems?.map((item) => {
+                            // Skip items with null or undefined product
+                            if (!item || !item.product) {
+                                return null;
+                            }
+                            
+                            return (
+                                <ProductComparisonCard
+                                    key={item._id}
+                                    product={item.product}
+                                    isSelected={selectedProducts.some(p => p && p._id === item.product._id)}
+                                    onSelect={handleProductSelect}
+                                    onDelete={() => delwish(user?._id, item.product._id)}
+                                    onMoveToBag={() => movetobag(user?._id, item.product._id)}
+                                />
+                            );
+                        })}
                     </div>
                 ) : (
                     /* Comparison View */

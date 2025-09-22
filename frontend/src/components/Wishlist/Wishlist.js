@@ -98,15 +98,20 @@ const Wishlist = () => {
                             <div className='2xl:px-4 xl:px-4 lg:px-4 '>
     
                                 <ul className='grid grid-cols-2 2xl:grid-cols-5 xl:grid-cols-5 lg:grid-cols-5 2xl:gap-10 xl:gap-10 lg:gap-10 '>
-                                    {wishlist && wishlist.orderItems.map((pro) => (
-                                        <span className='border-[1px] border-slate-300 relative'>
-                                            <div className='text-base  cursor-pointer bg-slate-400 rounded-full absolute right-3 top-3 z-[5] h-max w-max' onClick={()=>delwish(user._id, pro.product._id)}><MdClear className='font-extralight '/></div>
-                                            <Single_product pro={pro.product} key={pro._id} />
-                                            <div className='cursor-pointer w-full text-center font1 font-semibold text-base py-2 text-[#ff3f6c] border-t-[1px] border-slate-300'onClick={()=>movetobag(user._id, pro.product._id)}>MOVE TO BAG</div>
-                                        </span>
-    
-    
-                                    ))}
+                                    {wishlist && wishlist.orderItems.map((pro) => {
+                                        // Only render if product exists and has required data
+                                        if (!pro.product || !pro.product._id) {
+                                            return null;
+                                        }
+                                        
+                                        return (
+                                            <span key={pro._id} className='border-[1px] border-slate-300 relative'>
+                                                <div className='text-base  cursor-pointer bg-slate-400 rounded-full absolute right-3 top-3 z-[5] h-max w-max' onClick={()=>delwish(user._id, pro.product._id)}><MdClear className='font-extralight '/></div>
+                                                <Single_product pro={pro.product} />
+                                                <div className='cursor-pointer w-full text-center font1 font-semibold text-base py-2 text-[#ff3f6c] border-t-[1px] border-slate-300'onClick={()=>movetobag(user._id, pro.product._id)}>MOVE TO BAG</div>
+                                            </span>
+                                        );
+                                    })}
                                 </ul>
     
                             </div>

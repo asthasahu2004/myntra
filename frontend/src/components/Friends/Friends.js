@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { FaUpload, FaCog, FaUsers, FaRss, FaUserPlus } from 'react-icons/fa'
 import FriendsSelector from './FriendsSelector'
 import FriendsFeed from './FriendsFeed'
+import ProductsFeed from './ProductsFeed'
 import DataUpload from './DataUpload'
 import axios from 'axios'
 
@@ -351,6 +352,10 @@ const Friends = () => {
         <Route 
           path="/manage" 
           element={<DataManagementScreen />} 
+        />
+        <Route 
+          path="/products" 
+          element={<ProductsFeed />} 
         />
       </Routes>
 

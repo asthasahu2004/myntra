@@ -157,6 +157,39 @@ exports.getContacts = resolveandcatch(async (req, res, next) => {
 exports.getAllPreSeededContacts = resolveandcatch(async (req, res, next) => {
     const { search } = req.query
     
+    console.log('🔍 Getting pre-seeded contacts...')
+    console.log('🗄️ Database name:', mongoose.connection.db.databaseName)
+    console.log('📁 Collection name:', Contact.collection.name)
+    
+    // First, let's check total count without any filters
+    const totalCount = await Contact.countDocuments()
+    console.log('📊 Total contacts in database:', totalCount)
+    
+    // Let's also check if there are any documents in the collection at all
+    const allDocs = await Contact.find({}).limit(5)
+    console.log('📄 Sample documents:', allDocs.length)
+    
+    // If no contacts exist, let's try to create a test contact to verify the connection works
+    if (totalCount === 0) {
+        console.log('🧪 No contacts found, creating a test contact...')
+        try {
+            const testContact = new Contact({
+                name: 'Test User',
+                email: 'test@example.com',
+                avatar: 'https://via.placeholder.com/150',
+                isActive: true
+            })
+            await testContact.save()
+            console.log('✅ Test contact created successfully')
+            
+            // Check count again
+            const newCount = await Contact.countDocuments()
+            console.log('📊 New total contacts:', newCount)
+        } catch (error) {
+            console.log('❌ Error creating test contact:', error.message)
+        }
+    }
+    
     let query = { isActive: true }
     if (search) {
         query = {
@@ -168,10 +201,14 @@ exports.getAllPreSeededContacts = resolveandcatch(async (req, res, next) => {
         }
     }
     
+    console.log('🔍 Query:', JSON.stringify(query))
+    
     const contacts = await Contact.find(query)
         .select('name email avatar metadata')
         .sort({ name: 1 })
         .limit(20) // Always return max 20 contacts
+    
+    console.log('📋 Found contacts:', contacts.length)
     
     res.status(200).json({
         success: true,
@@ -338,19 +375,6 @@ exports.createSeedData = resolveandcatch(async (req, res, next) => {
                 totalProducts: 45,
                 totalWatchTime: 3600,
                 totalOrders: 12
-            },
-            productDatasets: {
-                wishlist: [
-                    { productId: "prod_001", name: "Summer Dress", price: 89.99, category: "Clothing", brand: "FashionCo" },
-                    { productId: "prod_002", name: "Sneakers", price: 129.99, category: "Footwear", brand: "SportBrand" }
-                ],
-                orderHistory: [
-                    { productId: "prod_003", name: "Handbag", price: 199.99, category: "Accessories", brand: "LuxuryBags" }
-                ],
-                watchTime: [
-                    { productId: "prod_001", timeSpent: 300 },
-                    { productId: "prod_004", timeSpent: 180 }
-                ]
             }
         },
         {
@@ -361,17 +385,6 @@ exports.createSeedData = resolveandcatch(async (req, res, next) => {
                 totalProducts: 32,
                 totalWatchTime: 2400,
                 totalOrders: 8
-            },
-            productDatasets: {
-                wishlist: [
-                    { productId: "prod_005", name: "Gaming Headset", price: 159.99, category: "Electronics", brand: "TechGear" }
-                ],
-                orderHistory: [
-                    { productId: "prod_006", name: "T-Shirt", price: 29.99, category: "Clothing", brand: "CasualWear" }
-                ],
-                watchTime: [
-                    { productId: "prod_005", timeSpent: 420 }
-                ]
             }
         },
         {

@@ -25,6 +25,7 @@ const FriendsSelector = () => {
   const fetchContacts = async () => {
     try {
       setLoading(true)
+      setError('')
       const response = await axios.get('/api/v1/friends/contacts/preseeded', {
         params: {
           search: searchTerm
@@ -37,8 +38,33 @@ const FriendsSelector = () => {
         setTotalPages(1) // All contacts are loaded at once
       }
     } catch (err) {
-      setError('Failed to load contacts. Please try again.')
-      console.error('Error fetching contacts:', err)
+      console.error('Error fetching contacts from API:', err)
+      
+      // Fallback to mock data if API fails
+      try {
+        console.log('Attempting to load fallback mock data...')
+        const mockResponse = await fetch('/mock-contacts.json')
+        
+        if (!mockResponse.ok) {
+          throw new Error(`HTTP error! status: ${mockResponse.status}`)
+        }
+        
+        const mockData = await mockResponse.json()
+        console.log('Mock data loaded:', mockData)
+        
+        if (mockData.contacts && Array.isArray(mockData.contacts)) {
+          setContacts(mockData.contacts)
+          setFilteredContacts(mockData.contacts)
+          setTotalPages(Math.ceil(mockData.contacts.length / contactsPerPage))
+          console.log('Successfully loaded mock contacts:', mockData.contacts.length)
+          setError(null) // Clear any previous errors
+        } else {
+          throw new Error('Invalid mock data format')
+        }
+      } catch (mockError) {
+        console.error('Error loading mock data:', mockError)
+        setError('Failed to load contacts. Please try again.')
+      }
     } finally {
       setLoading(false)
     }
@@ -105,8 +131,8 @@ const FriendsSelector = () => {
       localStorage.setItem('feedGeneratedAt', new Date().toISOString())
 
       // For the self-contained feature, we'll generate the feed on the frontend
-      // Navigate to friends feed
-      navigate('/friends/feed')
+      // Navigate to friends products
+      navigate('/friends/products')
       
     } catch (err) {
       setError('Failed to generate feed. Please try again.')

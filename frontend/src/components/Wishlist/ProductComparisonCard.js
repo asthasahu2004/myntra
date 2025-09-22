@@ -7,6 +7,17 @@ const ProductComparisonCard = ({ product, isSelected, onSelect, onDelete, onMove
     const [imageLoaded, setImageLoaded] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
 
+    // Early return if product is null or undefined
+    if (!product) {
+        return (
+            <div className="relative bg-white rounded-xl shadow-sm border-2 border-gray-200 p-4">
+                <div className="text-center text-gray-500">
+                    <p>Product not available</p>
+                </div>
+            </div>
+        )
+    }
+
     const discountPercentage = product.mrp && product.sellingPrice 
         ? Math.round(((product.mrp - product.sellingPrice) / product.mrp) * 100)
         : 0

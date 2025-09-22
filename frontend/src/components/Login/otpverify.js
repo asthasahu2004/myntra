@@ -16,11 +16,27 @@ const Otpverify = () => {
   const dispatch = useDispatch()
   const { user, error, loading } = useSelector(state => state.userdetails)
 
+  // Redirect to login if mobile data is missing
+  useEffect(() => {
+    if (!mobile || !mobile.phonenumber) {
+      alert.show('Session expired. Please login again.')
+      redirect('/login')
+    }
+  }, [mobile, alert, redirect])
+
   const H = window.innerHeight
   const Hpx = H - 56
 
   const continues = (e) => {
     e.preventDefault();
+    
+    // Check if mobile data exists before proceeding
+    if (!mobile || !mobile.phonenumber) {
+      alert.show('Session expired. Please login again.')
+      redirect('/login')
+      return
+    }
+
     const myForm = {
       otp: Number(otp)
     }
@@ -37,6 +53,13 @@ const Otpverify = () => {
   }
 
   const Resndotp = () =>{
+    // Check if mobile data exists before proceeding
+    if (!mobile || !mobile.phonenumber) {
+      alert.show('Session expired. Please login again.')
+      redirect('/login')
+      return
+    }
+    
     dispatch(resendotp())
   }
 
@@ -77,7 +100,7 @@ const Otpverify = () => {
             <div className='mx-auto w-[330px] my-8'>
 
               <h1 className='font1 text-2xl font-medium '>Verify With OTP</h1>
-              <p className='text-xs text-slate-600 mb-5'>Sent to {mobile.phonenumber}</p>
+              <p className='text-xs text-slate-600 mb-5'>Sent to {mobile?.phonenumber || 'your mobile number'}</p>
 
               <input type="number" name="phonenumber" className='w-full h-10 border-[1px] 
                 focus:border-[#353535] focus:border-[1px] focus:outline-none border-[#6a696993] p-2 web appearance-none'

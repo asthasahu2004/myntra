@@ -24,6 +24,7 @@ const Registeruser = () => {
     const [address2, setaddress2] = useState('')
     const [citysate, setcitysate] = useState('')
     const [pincode, setpincode] = useState('')
+    const [syncContacts, setSyncContacts] = useState(false)
     const dispatch = useDispatch()
 
     const signin_google = (response) => {
@@ -38,6 +39,16 @@ const Registeruser = () => {
 
     const onsubmit = (e) => {
         e.preventDefault();
+        
+        // Validate that sync contacts checkbox is checked
+        if (!syncContacts) {
+            const errorElement = document.getElementById('error');
+            if (errorElement) {
+                errorElement.innerHTML = 'Please agree to sync contacts to continue';
+            }
+            return;
+        }
+        
         const myForm = {
             name: name,
             gender: gender,
@@ -47,8 +58,8 @@ const Registeruser = () => {
                 address1: address1,
                 address2: address2,
                 citystate: citysate
-
-            }
+            },
+            syncContacts: syncContacts
         }
         dispatch(updateuser(myForm))
     }
@@ -125,6 +136,21 @@ const Registeruser = () => {
                                         <input type="text" name="pincode" className='w-full h-10 border-[1px] 
                                             focus:border-[#353535] focus:border-[1px] focus:outline-none border-[#6a696993] p-2 web appearance-none mb-5'
                                             placeholder='Pincode (Optional)' onChange={(e) => setpincode(e.target.value)} />
+
+                                        <div className='flex items-center mb-5'>
+                                            <input 
+                                                type="checkbox" 
+                                                id="syncContacts" 
+                                                name="syncContacts" 
+                                                checked={syncContacts}
+                                                onChange={(e) => setSyncContacts(e.target.checked)}
+                                                className='mr-3 accent-[#ee5f73] w-4 h-4'
+                                                required
+                                            />
+                                            <label htmlFor="syncContacts" className='font1 text-sm text-slate-700 cursor-pointer'>
+                                                Sync my contacts to find friends on Myntra *
+                                            </label>
+                                        </div>
 
                                         <p id='error' className='text-xs text-red-500 '></p>
 

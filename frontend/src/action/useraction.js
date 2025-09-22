@@ -66,6 +66,12 @@ export const otpverifie = (otp) => async (dispatch) => {
 
         dispatch({ type: REQUEST_VERIFY_OTP })
         const mobile = JSON.parse(localStorage.getItem('mobileno'))
+        
+        if (!mobile || !mobile.phonenumber) {
+            dispatch({ type: FAIL_VERIFY_OTP, payload: 'Session expired. Please login again.' })
+            return
+        }
+        
         const mobileno = Number(mobile.phonenumber)
 
 
@@ -87,6 +93,12 @@ export const resendotp = () => async (dispatch) => {
 
         dispatch({ type: REQUEST_RESEND_OTP })
         const mobile = JSON.parse(localStorage.getItem('mobileno'))
+        
+        if (!mobile || !mobile.phonenumber) {
+            dispatch({ type: FAIL_RESEND_OTP, payload: 'Session expired. Please login again.' })
+            return
+        }
+        
         const mobileno = Number(mobile.phonenumber)
 
         const { data } = await axios.get(`/api/v1/resendotp/${mobileno}`)
@@ -106,6 +118,12 @@ export const updateuser = (userdata) => async (dispatch) => {
 
         dispatch({ type: REQUEST_UPDATE_USER })
         const mobile = JSON.parse(localStorage.getItem('mobileno'))
+        
+        if (!mobile || !mobile.phonenumber) {
+            dispatch({ type: FAIL_UPDATE_USER, payload: 'Session expired. Please login again.' })
+            return
+        }
+        
         const mobileno = Number(mobile.phonenumber)
         const config = { headers: { "Content-Type": "application/json" } }
 
