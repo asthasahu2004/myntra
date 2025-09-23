@@ -89,7 +89,7 @@ Shoppers face three key challenges in online fashion:
 - **API Gateway** → Auth, Rate Limiting, Logging  
 - **Application Layer** → E-commerce services, AI services, Social graph services  
 - **Data Layer** → MongoDB, AI Model Store, CDN for images  
-- **External Services** → Payments, Email/SMS, OAuth  
+- **External Services** → Email/SMS, OAuth  
 
 ![Architecture Diagram](<img width="421" height="595" alt="image" src="https://github.com/user-attachments/assets/f0b3c05f-c4bc-46d7-9975-c603845110aa" />) <!-- Add architecture flowchart here -->
 
@@ -163,6 +163,7 @@ update successfully
     </td>
   </tr>
 </table>
+
 
 
 
