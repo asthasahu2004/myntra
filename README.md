@@ -137,20 +137,33 @@ npm start
 update successfully
 
 **THANK YOU**
-
-## Made with ❤️ by
 ## Made with ❤️ by
 
-<div align="center">
-  <a href="https://github.com/asthasahu2004" target="_blank">
-    <img src="https://github.com/asthasahu2004.png" width="100" height="100" style="border-radius:50%; margin: 0 15px;" alt="Astha Sahu"/>
-  </a>
-  <a href="https://github.com/USERNAME" target="_blank">
-    <img src="https://github.com/USERNAME.png" width="100" height="100" style="border-radius:50%; margin: 0 15px;" alt="Khushi Pal"/>
-  </a>
-  <a href="https://github.com/Vaishhh191919" target="_blank">
-    <img src="https://github.com/Vaishhh191919.png" width="100" height="100" style="border-radius:50%; margin: 0 15px;" alt="Vaishnavi Bandewar"/>
-  </a>
-</div>
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/asthasahu2004" target="_blank">
+        <img src="https://github.com/asthasahu2004.png" width="150" height="150" style="border-radius:50%; border:4px solid #ff69b4;" alt="Astha Sahu"/>
+      </a>
+      <br>Astha Sahu
+    </td>
+    <td width="30"></td> <!-- Gap between avatars -->
+    <td align="center">
+      <a href="https://github.com/USERNAME" target="_blank">
+        <img src="https://github.com/USERNAME.png" width="150" height="150" style="border-radius:50%; border:4px solid #ff69b4;" alt="Khushi Pal"/>
+      </a>
+      <br>Khushi Pal
+    </td>
+    <td width="30"></td>
+    <td align="center">
+      <a href="https://github.com/Vaishhh191919" target="_blank">
+        <img src="https://github.com/Vaishhh191919.png" width="150" height="150" style="border-radius:50%; border:4px solid #ff69b4;" alt="Vaishnavi Bandewar"/>
+      </a>
+      <br>Vaishnavi Bandewar
+    </td>
+  </tr>
+</table>
+
+
 
 
