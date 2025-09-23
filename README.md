@@ -3,7 +3,7 @@
 ## 📌 **Overview**
 This project was built as part of the **Myntra Hackathon 2025**.  
 It was originally cloned from 👉 [Myntra Clone by vikasdev8](https://github.com/vikasdev8/MyntraClone) and the dataset was taken from  👉 [ronakbokaria/myntra-products-dataset](https://www.kaggle.com/datasets/ronakbokaria/myntra-products-dataset)  
-This contains product metadata (names, categories, images, prices) which helps bootstrap product catalogue, embeddings, and recommendation engines.
+This contains product metadata (names, categories, images, prices) that helps bootstrap product catalogue, embeddings, and recommendation engines.
 We have extended the minimal non-functional clone with **AI-powered features** to transform e-commerce experiences with **personalisation, trust, and decision-making support**.  
 
 ![Overview]() <!-- Add project overview diagram here -->
@@ -139,9 +139,18 @@ update successfully
 **THANK YOU**
 
 ## Made with ❤️ by
+## Made with ❤️ by
 
-[![Astha Sahu](https://github.com/asthasahu2004.png?size=50)](https://github.com/asthasahu2004)  
-[![Khushi Pal]()]()  
-[![Vaishnavi Bandewar](https://github.com/Vaishhh191919.png?size=50)](https://github.com/Vaishhh191919)
+<div align="center">
+  <a href="https://github.com/asthasahu2004" target="_blank">
+    <img src="https://github.com/asthasahu2004.png" width="100" height="100" style="border-radius:50%; margin: 0 15px;" alt="Astha Sahu"/>
+  </a>
+  <a href="https://github.com/USERNAME" target="_blank">
+    <img src="https://github.com/USERNAME.png" width="100" height="100" style="border-radius:50%; margin: 0 15px;" alt="Khushi Pal"/>
+  </a>
+  <a href="https://github.com/Vaishhh191919" target="_blank">
+    <img src="https://github.com/Vaishhh191919.png" width="100" height="100" style="border-radius:50%; margin: 0 15px;" alt="Vaishnavi Bandewar"/>
+  </a>
+</div>
 
 
