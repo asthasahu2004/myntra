@@ -31,8 +31,8 @@ Shoppers face three key challenges in online fashion:
 - **BART**→ sequence-to-sequence model designed for both understanding and text generation, so as to sort out the similar items for recommendation. 
 - **MongoDB (Friendship Graph)** → store user-friend connections securely.  
 
-![Social Circle Recommendations](![WhatsApp Image 2025-09-22 at 23 19 37_6b6a426b](https://github.com/user-attachments/assets/d18f0e9f-7e36-4ec5-89fd-1c39604e3747)
-) 
+![WhatsApp Image 2025-09-22 at 23 19 37_6b6a426b](https://github.com/user-attachments/assets/d18f0e9f-7e36-4ec5-89fd-1c39604e3747)
+
 ![WhatsApp Image 2025-09-22 at 23 20 14_94212ef7](https://github.com/user-attachments/assets/f2764b7d-d46c-4cac-8d8c-56b45b3b50ca)
 <!-- Add mockup screenshot -->
 
@@ -48,8 +48,8 @@ Shoppers face three key challenges in online fashion:
 - **FLAN-T5** → optimized for **short, human-readable summaries**.  
 - **MongoDB (Reviews Collection)** → store review text and embeddings for retrieval.  
 
-![Review Summarisation](![WhatsApp Image 2025-09-22 at 23 22 34_58d1e98e](https://github.com/user-attachments/assets/161a0e0e-19d2-486b-8f18-f4a93225b9fb)
-) <!-- Add AI summary UI screenshot -->
+![WhatsApp Image 2025-09-22 at 23 22 34_58d1e98e](https://github.com/user-attachments/assets/161a0e0e-19d2-486b-8f18-f4a93225b9fb)
+ <!-- Add AI summary UI screenshot -->
 
 ---
 
@@ -64,8 +64,8 @@ Shoppers face three key challenges in online fashion:
 - **Hybrid Scoring (Rules + ML)** → combine business logic (price, delivery) with AI (preferences).  
 - **React (UI)** → dynamic comparison modal with highlights of best picks.  
 
-![Wishlist Comparison](![WhatsApp Image 2025-09-22 at 23 20 35_04c24177](https://github.com/user-attachments/assets/83c0ad4b-ab63-4e64-a553-de002f2f9671)
-) ![WhatsApp Image 2025-09-22 at 23 21 26_9044f163](https://github.com/user-attachments/assets/95a0e5aa-942d-496f-b873-fca21085bef3)![WhatsApp Image 2025-09-22 at 23 21 43_1e3d846b](https://github.com/user-attachments/assets/e8e0cdc2-ae03-49e3-add5-81fbffafcf87)
+![WhatsApp Image 2025-09-22 at 23 20 35_04c24177](https://github.com/user-attachments/assets/83c0ad4b-ab63-4e64-a553-de002f2f9671)
+![WhatsApp Image 2025-09-22 at 23 21 26_9044f163](https://github.com/user-attachments/assets/95a0e5aa-942d-496f-b873-fca21085bef3)![WhatsApp Image 2025-09-22 at 23 21 43_1e3d846b](https://github.com/user-attachments/assets/e8e0cdc2-ae03-49e3-add5-81fbffafcf87)
 
 <!-- Add wishlist comparison screenshot -->
 
@@ -91,8 +91,7 @@ Shoppers face three key challenges in online fashion:
 - **Data Layer** → MongoDB, AI Model Store, CDN for images  
 - **External Services** → Payments, Email/SMS, OAuth  
 
-![Architecture Diagram](<img width="421" height="595" alt="image" src="https://github.com/user-attachments/assets/f0b3c05f-c4bc-46d7-9975-c603845110aa" />
-) <!-- Add architecture flowchart here -->
+![Architecture Diagram](<img width="421" height="595" alt="image" src="https://github.com/user-attachments/assets/f0b3c05f-c4bc-46d7-9975-c603845110aa" />) <!-- Add architecture flowchart here -->
 
 ---
 
@@ -138,7 +137,11 @@ npm start
 update successfully
 
 **THANK YOU**
-Made with ❤️ by
-- [Astha Sahu]([https://github.com/asthasahu2004](https://github.com/asthasahu2004/))
-- [Khushi Pal]([]())
-- [Vaishnavi Bandewar]([https://github.com/Vaishhh191919](https://github.com/Vaishhh191919/))
+
+## Made with ❤️ by
+
+[![Astha Sahu](https://github.com/asthasahu2004.png?size=50)](https://github.com/asthasahu2004)  
+[![Khushi Pal]()]()  
+[![Vaishnavi Bandewar](https://github.com/Vaishhh191919.png?size=50)](https://github.com/Vaishhh191919)
+
+
