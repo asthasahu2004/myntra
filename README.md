@@ -28,7 +28,7 @@ Shoppers face three key challenges in online fashion:
 **Tech Used & Why**  
 - **SentenceTransformers** → generate embeddings for similarity between users & products.  
 - **CLIP** → align product images with textual metadata for richer matching.
-- **BART**→ sequence-to-sequence model designed for both understanding and text generation, so as to sort out the similar items for recommendation. 
+- **BERT**→ sequence-to-sequence model designed for both understanding and text generation, so as to sort out the similar items for recommendation. 
 - **MongoDB (Friendship Graph)** → store user-friend connections securely.  
 
 ![WhatsApp Image 2025-09-22 at 23 19 37_6b6a426b](https://github.com/user-attachments/assets/d18f0e9f-7e36-4ec5-89fd-1c39604e3747)
@@ -40,7 +40,7 @@ Shoppers face three key challenges in online fashion:
 
 ### 2️⃣ **AI Review Summarization**
 - **What it is**: An AI component that condenses hundreds of reviews into a simple **“Loved vs Found Issues”** summary.  
-- **How it works**: Uses **BERT / FLAN-T5** for summarization + **sentiment analysis** to highlight top positives & negatives.  
+- **How it works**: Uses **BAART / FLAN-T5** for summarization + **sentiment analysis** to highlight top positives & negatives.  
 - **Impact**: Reduces decision uncertainty, builds confidence, and shortens product evaluation time.  
 
 **Tech Used & Why**  
@@ -78,14 +78,14 @@ Shoppers face three key challenges in online fashion:
 | **Frontend**        | React.js, React Native (mobile), Tailwind CSS                                                       | Fast UI development, responsive design, mobile + web parity |
 | **Backend**         | Node.js + Express                                                                                   | Lightweight, scalable, easy to connect APIs & ML |
 | **Database**        | MongoDB Cluster (Users, Products, Reviews, Friendships)                                             | Flexible schema for user-product interactions |
-| **AI/ML Models**    | - **Social Recommendations** → SBERT, CLIP, BART <br> - **Review Summarization** → BERT / FLAN-T5 <br> - **Wishlist Comparison** → Custom embeddings + hybrid scoring + FLAN-T5 | Each chosen for optimal performance in NLP/vision tasks |
-| **Infrastructure**  | API Gateway, Load Balancer, Hugging Face Hub for model hosting                                      | Secure scaling & external ML hosting |
+| **AI/ML Models**    | - **Social Recommendations** → SBERT, CLIP, BERT <br> - **Review Summarization** → BART / FLAN-T5 <br> - **Wishlist Comparison** → Custom embeddings + hybrid scoring + FLAN-T5 | Each chosen for optimal performance in NLP/vision tasks |
+| **Infrastructure**  | API Gateway, Hugging Face Hub for model hosting                                      | Secure scaling & external ML hosting |
 | **External Services** |  SendGrid (emails), OAuth (login), Analytics & Monitoring                      |  communication, identity, tracking |
 
 ---
 
 ## 🏗 **High-Level Architecture**
-- **Client Layer** → Mobile App / Web SPA  
+- **Client Layer** →  Web SPA  
 - **API Gateway** → Auth, Rate Limiting, Logging  
 - **Application Layer** → E-commerce services, AI services, Social graph services  
 - **Data Layer** → MongoDB, AI Model Store, CDN for images  
@@ -115,27 +115,6 @@ This project empowers **Myntra shoppers** with **trust, personalisation, and con
 
 ---
 
-## ⚡ **How to Run Locally**
-npm install   # frontend
-cd backend && npm install   # backend
-#env files
-Be sure to create a config.env file in the backend/config directory and add appropriate variables to use the app.
-
-**Essential Variables**
-PORT=
-NODE_ENV = 
-DB_URI=
-YOUR_API_KEY=
-CLIENTID=
-SECRETID=
-
-**Run the files**
-cd backend
-npm run dev
-cd frontend
-npm start
-update successfully
-
 **THANK YOU**
 ## Made with ❤️ by
 
@@ -163,6 +142,7 @@ update successfully
     </td>
   </tr>
 </table>
+
 
 
 
