@@ -6,6 +6,10 @@ It was originally cloned from 👉 [Myntra Clone by vikasdev8](https://github.co
 This contains product metadata (names, categories, images, prices) that helps bootstrap product catalogue, embeddings, and recommendation engines.
 We have extended the minimal non-functional clone with **AI-powered features** to transform e-commerce experiences with **personalisation, trust, and decision-making support**.  
 
+🎥 **Demo Video:** [Watch here](https://drive.google.com/file/d/1y0ZNoHepthe3PuP75gP5NIYN8Ojg4NNo/view?usp=sharing)  
+📊 **Project Presentation (PPT):** [View on Canva](https://www.canva.com/design/DAGzjaQqmGE/YNN7WjXii_yxbimo7-w54Q/edit?utm_content=DAGzjaQqmGE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+
 ![Overview]() <!-- Add project overview diagram here -->
 
 ---
@@ -141,6 +145,7 @@ This project empowers **Myntra shoppers** with **trust, personalisation, and con
     </td>
   </tr>
 </table>
+
 
 
 
