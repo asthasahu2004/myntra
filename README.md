@@ -40,12 +40,11 @@ Shoppers face three key challenges in online fashion:
 
 ### 2️⃣ **AI Review Summarization**
 - **What it is**: An AI component that condenses hundreds of reviews into a simple **“Loved vs Found Issues”** summary.  
-- **How it works**: Uses **BAART / FLAN-T5** for summarization + **sentiment analysis** to highlight top positives & negatives.  
+- **How it works**: Uses **BAART for summarization + **sentiment analysis** to highlight top positives & negatives.  
 - **Impact**: Reduces decision uncertainty, builds confidence, and shortens product evaluation time.  
 
 **Tech Used & Why**  
 - **BERT** → strong at sentiment classification (positive, neutral, negative).  
-- **FLAN-T5** → optimized for **short, human-readable summaries**.  
 - **MongoDB (Reviews Collection)** → store review text and embeddings for retrieval.  
 
 ![WhatsApp Image 2025-09-22 at 23 22 34_58d1e98e](https://github.com/user-attachments/assets/161a0e0e-19d2-486b-8f18-f4a93225b9fb)
@@ -59,7 +58,7 @@ Shoppers face three key challenges in online fashion:
 - **Impact**: Speeds up decision-making, lowers cart drop-offs, and drives conversions.  
 
 **Tech Used & Why**  
--**FLAN-T5**→ summarisation of the comparison of the products suggested by AI.
+-**BERT**→ Built an intelligent wishlist comparison system using SBERT to perform semantic similarity matching between products, overcoming limitations of traditional keyword-based approaches.
 - **Custom Embeddings** → represent product attributes for better contextual comparisons.  
 - **Hybrid Scoring (Rules + ML)** → combine business logic (price, delivery) with AI (preferences).  
 - **React (UI)** → dynamic comparison modal with highlights of best picks.  
@@ -78,7 +77,7 @@ Shoppers face three key challenges in online fashion:
 | **Frontend**        | React.js, React Native (mobile), Tailwind CSS                                                       | Fast UI development, responsive design, mobile + web parity |
 | **Backend**         | Node.js + Express                                                                                   | Lightweight, scalable, easy to connect APIs & ML |
 | **Database**        | MongoDB Cluster (Users, Products, Reviews, Friendships)                                             | Flexible schema for user-product interactions |
-| **AI/ML Models**    | - **Social Recommendations** → SBERT, CLIP, BERT <br> - **Review Summarization** → BART / FLAN-T5 <br> - **Wishlist Comparison** → Custom embeddings + hybrid scoring + FLAN-T5 | Each chosen for optimal performance in NLP/vision tasks |
+| **AI/ML Models**    | - **Social Recommendations** → SBERT, CLIP, BERT <br> - **Review Summarization** → BART <br> - **Wishlist Comparison** → Custom embeddings + hybrid scoring | Each chosen for optimal performance in NLP/vision tasks |
 | **Infrastructure**  | API Gateway, Hugging Face Hub for model hosting                                      | Secure scaling & external ML hosting |
 | **External Services** |  SendGrid (emails), OAuth (login), Analytics & Monitoring                      |  communication, identity, tracking |
 
@@ -128,8 +127,8 @@ This project empowers **Myntra shoppers** with **trust, personalisation, and con
     </td>
     <td width="30"></td> <!-- Gap between avatars -->
     <td align="center">
-      <a href="https://github.com/USERNAME" target="_blank">
-        <img src="https://github.com/USERNAME.png" width="150" height="150" style="border-radius:50%; border:4px solid #ff69b4;" alt="Khushi Pal"/>
+      <a href="https://github.com/khushi-pal7" target="_blank">
+        <img src="https://github.com/khushi-pal7.png" width="150" height="150" style="border-radius:50%; border:4px solid #ff69b4;" alt="Khushi Pal"/>
       </a>
       <br>Khushi Pal
     </td>
@@ -142,6 +141,7 @@ This project empowers **Myntra shoppers** with **trust, personalisation, and con
     </td>
   </tr>
 </table>
+
 
 
 
